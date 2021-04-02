@@ -1,3 +1,1 @@
-assignment1_data.zip
-data.csv
-WordCounter2.zipWordCounter2.zip
+serverFile.txt

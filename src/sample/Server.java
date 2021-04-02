@@ -97,7 +97,7 @@ class instance implements Runnable {
                     out.writeUTF("Got Filename");
                     out.flush();
                     //sets filepath
-                    File dir = new File ("files");
+                    File dir = new File ("Server_Files");
                     File file = new File (dir, filename);
                     System.out.println("filepath = " + file.getAbsolutePath());
 
@@ -120,7 +120,7 @@ class instance implements Runnable {
                 }
                 else if(args[0].equals("DOWNLOAD")){
                     String filename = args[1];
-                        File dir = new File ("files");
+                        File dir = new File ("Server_Files");
                         File file = new File (dir, filename);
                     System.out.println("filepath = " + file.getAbsolutePath());
 

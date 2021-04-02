@@ -63,7 +63,7 @@ public class Client {
         System.out.println(in.readUTF());
 
         //this should read from file in bite (ha) sized pieces
-        //rather than loading the entire file to ram
+        //rather than loading the entire file to
         FileInputStream fileIn = new FileInputStream(file);
         int bytes=0;
         out.writeLong(file.length());
@@ -72,6 +72,7 @@ public class Client {
             out.write(buffer,0,bytes);
             out.flush();
         }
+        System.out.println("filepath = " + file.getAbsolutePath());
         return in.readUTF();
     }
 
