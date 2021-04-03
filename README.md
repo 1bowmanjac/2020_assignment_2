@@ -24,8 +24,6 @@ while the bottom has a list of files in the shared folder of the local client.
 A custom 'dark mode' CSS material design was implemented into the interface.
 Interface was slightly modified as for a unique appearance. 
 
-TODO : More Improvements
-
 ## Steps to Clone Application
 
 Configuration Settings
@@ -51,7 +49,7 @@ java src/sample/Client.java
 
 ###### To Download:
 ```sh
-java src/sample/Client.java <UPLOAD> <"FileName_To_Download"> <"Location_To_Download">
+java src/sample/Client.java <DOWNLOAD> <"FileName_To_Download"> <"Location_To_Download">
 ```
 
 ###### To Upload:
@@ -69,7 +67,7 @@ java src/sample/Client.java <DIR>
 
 ## License
 
-_Jack Bowman 1007#####_  
+_Jack Bowman 100752381_  
 _Sanjay Deoram 100753118_  
 _Romulo Parotirza 100753119_  
 _Ontario Tech University_
