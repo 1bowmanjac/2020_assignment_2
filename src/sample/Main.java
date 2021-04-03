@@ -7,152 +7,183 @@ import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Objects;
 
 public class Main extends Application {
-    ListView<String> listView = new ListView();
-    ListView<String> clientView = new ListView();
+    ListView<String> listView = new ListView<>();
+    ListView<String> clientView = new ListView<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        // Server Screen
         var socket = new Socket("localhost", 25505);
         Client cl = new Client(socket);
 
-        GridPane grid = new GridPane();
-        grid.setPadding(new Insets(10, 10, 10, 10));
-        grid.setVgap(8);
-        grid.setHgap(10);
+        // Iterating the List element using for-each loop
+        String[] lines = cl.DIR().split("\\r?\\n");
 
-        Text scenetitle = new Text("Server");
-        scenetitle.setFill(Color.WHITE);
-        scenetitle.setId("welcome-text");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        // ------------ Server Screen ------------
 
+        // set Server Grid
+        GridPane serverGrid = new GridPane();
+        setGrid(serverGrid);
 
-        //button
-        Button download = new Button("Download");
+        Label serverTitle = new Label("Server");
+        serverTitle.setFont(Font.font(20));
 
-        //Iterating the List element using for-each loop
-        String lines[] = cl.DIR().split("\\r?\\n");
-
-        viewFiles(listView,lines);
-
-        listView.setPrefHeight(500);
-        listView.setPrefWidth(1000);
-        listView.setStyle("-fx-background-color: transparent");
-        download.setOnAction(e-> {
+        // Download Button
+        Button downloadBtn = new Button("Download");
+        downloadBtn.setOnAction(e-> {
             try {
-                downloadButton(cl);
+                downloadButton();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         });
 
+        // Server File List UI
+        viewFiles(serverGrid,listView,lines,serverTitle,downloadBtn);
 
-        grid.add(scenetitle, 0, 0, 1, 1);
-        grid.add(listView, 0, 2, 2, 1);
-        grid.add(download, 0, 3, 1, 1);
+        // split screen
+        SplitPane sp = new SplitPane();
+        sp.setOrientation(Orientation.VERTICAL);
+        sp.setPrefSize(200, 200);
 
+        // ------------ Local Screen ------------
 
-        SplitPane splitPane1 = new SplitPane();
-        splitPane1.setOrientation(Orientation.VERTICAL);
-        splitPane1.setPrefSize(200, 200);
+        // set Server Grid
+        GridPane clientGrid = new GridPane();
+        setGrid(clientGrid);
 
-//--------------------------------------------------------------------------------------------------------------
-        // Local Screen
-        GridPane grid1 = new GridPane();
-        grid1.setPadding(new Insets(10, 10, 10, 10));
-        grid1.setVgap(8);
-        grid1.setHgap(10);
-        Label name1 = new Label("Client");
-        name1.setFont(Font.font(20));
-        grid1.add(name1, 0, 1);
-        Button uploadBtn = new Button("Upload");
-        grid1.add(uploadBtn, 0, 3);
+        Label clientTitle = new Label("Client");
+        clientTitle.setFont(Font.font(20));
 
-
+        // to view client local shared files
         File directoryPath = new File("Local_Files");
-        String contents[] = directoryPath.list();
+        String[] contents = directoryPath.list();
 
-        for(int i=0; i<contents.length; i++) {
+        // Files in local shared file
+        System.out.println("Files in local shared file");
+        for(int i = 0; i< Objects.requireNonNull(contents).length; i++) {
             System.out.println(contents[i]);
         }
-        viewFiles(clientView,contents);
-        clientView.setPrefHeight(500);
-        clientView.setPrefWidth(1000);
-        grid1.add(clientView,0,2);
 
+        // Upload Button
+        Button uploadBtn = new Button("Upload");
         uploadBtn.setOnAction(e-> {
             try {
-                uploadButton(cl);
+                uploadButton();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         });
-        //listView.refresh();
-        splitPane1.getItems().addAll(grid,grid1);
 
-        Scene scene = new Scene(splitPane1, 1000, 1000);
+        // Client File List UI
+        viewFiles(clientGrid,clientView,contents,clientTitle,uploadBtn);
+
+        sp.getItems().addAll(serverGrid,clientGrid);
+
+        Scene scene = new Scene(sp, 1000, 1000);
         scene.getStylesheets().add("Viper.css");
         primaryStage.setScene(scene);
-        primaryStage.setTitle("JavaFX App");
+        primaryStage.setTitle("File Sharing System");
 
         primaryStage.show();
     }
 
-    private void viewFiles(ListView<String> listView, String[] lines) {
+    /**
+     * Sets up GridPane
+     * @param grid File that you want to be uploaded
+     */
+    private void setGrid(GridPane grid){
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
+    }
+
+    /**
+     * Takes most responsibility of showing UI
+     * @param grid  Sets up the grid
+     * @param listView File UI
+     * @param lines Files themselves
+     * @param title Server/Client as titles
+     * @param btn Download/Upload buttons
+     */
+    private void viewFiles(GridPane grid, ListView<String> listView, String[] lines, Label title, Button btn) {
         listView.getItems().addAll(lines);
         listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         listView.getSelectionModel().getSelectedItem();
+        listView.setPrefHeight(500);
+        listView.setPrefWidth(1000);
+        listView.setStyle("-fx-background-color: transparent");
+        grid.add(title, 0, 1);
+        grid.add(listView,0,2);
+        grid.add(btn, 0, 3);
     }
 
+    /**
+     * Updates file UI when a download/upload occurs
+     * @param listView File UI
+     * @param line Files themselves
+
+     */
     private void addFile(ListView<String> listView, String line) {
         listView.getItems().addAll(line);
         listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         listView.getSelectionModel().getSelectedItem();
     }
 
-
-    private void downloadButton(Client cl) throws IOException {
-
+    /**
+     * Downloads file from Server to Local Client Shared Folder
+     * @throws IOException
+     */
+    private void downloadButton() throws IOException {
         String message = "";
         ObservableList<String> selected;
-        selected = (ObservableList<String>) listView.getSelectionModel().getSelectedItems();
+
+        // grabs selected file from list
+        selected = listView.getSelectionModel().getSelectedItems();
         for(String m: selected){
-            message+=m;
+            message += m;
         }
-        System.out.println(message);
+
+        // makes connection and downloads file
+        System.out.println("Downloaded : " +message);
         Socket socket = new Socket("localhost",25505);
         Client client = new Client(socket);
         client.DOWNLOAD(message,"Local_Files");
-        //(clientView,client.DIR().split("\\r?\\n"));
+
+        // updates UI
         addFile(clientView,message);
     }
 
-    private void uploadButton(Client cl) throws IOException {
-
+    /**
+     * Uploads file from Local Client to Server Shared Folder
+     * @throws IOException
+     */
+    private void uploadButton() throws IOException {
         String message = "";
         ObservableList<String> selected;
-        selected = (ObservableList<String>) clientView.getSelectionModel().getSelectedItems();
+
+        // grabs selected file from list
+        selected = clientView.getSelectionModel().getSelectedItems();
         for(String m: selected){
-            message+=m;
+            message += m;
         }
+
+        // makes connection and uploads file
         System.out.println("Uploaded : " + message);
         var socket = new Socket("localhost", 25505);
         Client client = new Client(socket);
         File file = new File("Local_Files/"+message);
         client.UPLOAD(file);
 
-        File directoryPath = new File("Server_Files");
+        // updates UI
         addFile(listView,message);
     }
 

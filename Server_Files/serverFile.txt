@@ -1,1 +1,0 @@
-o.FileNotFoundException: Local_Files\s1.txt (The system cannot find the file specified)

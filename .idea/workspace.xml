@@ -2,24 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c43d9c8-67db-426d-9c97-0c726e7ecef0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2020_assignment_2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloads/hello.txt" beforeDir="false" afterPath="$PROJECT_DIR$/downloads/hello.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Local_Files/localFile2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Local_Files/localFile2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_Files/Config.gif" beforeDir="false" afterPath="$PROJECT_DIR$/README_Files/Config.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_Files/Run.gif" beforeDir="false" afterPath="$PROJECT_DIR$/README_Files/Run.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server_Files/serverFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Server_Files/serverFile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/WordCounter2.zipWordCounter2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/assignment1_data.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/hello.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/new.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/filenames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/filenames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2020_assignment_2/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2020_assignment_2/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/instance.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +42,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Program Files/JavaFX/javafx-sdk-11.0.2/lib" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../Program Files/JavaFX/javafx-sdk-11.0.2/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Compound.Two">
+  <component name="RunManager" selected="Compound.Run Client  &amp; Server">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="2020_assignment_2" />
@@ -65,9 +69,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Two" type="CompoundRunConfigurationType">
-      <toRun name="Client" type="Application" />
+    <configuration name="Run Client  &amp; Server" type="CompoundRunConfigurationType">
       <toRun name="Server" type="Application" />
+      <toRun name="Client" type="Application" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="CompoundRunConfigurationType">
@@ -78,7 +82,7 @@
     <list>
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server" />
-      <item itemvalue="Compound.Two" />
+      <item itemvalue="Compound.Run Client  &amp; Server" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -102,5 +106,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -2,35 +2,70 @@
 ## _File Sharing System_
 
 
-Share Files with your Mates!
+####Share Files with your Mates!
 
 ![Run Program](README_Files/Run.gif)
 
 
 ## Features
 
-- 
-- 
-- 
+- Connects to a central server
+- Upload your files to the server
+- Download files from the server
 
-TODO : DESCRIPTION
+A file sharing system that can be used to upload files into a shared folder
+server that are connected to clients. The server is multi-threaded and 
+corresponds to a socket that remains open until it is handled. The client
+has its own respective UI that where most of the file sharing takes place.
+The server has a UI of a list of files in the shared folder of the server 
+while the bottom has a list of files in the shared folder of the local client.
 
 ## Improvements
-TODO : Improvements
+A custom 'dark mode' CSS material design was implemented into the interface.
+Interface was slightly modified as for a unique appearance. 
 
-## Steps to clone application
+TODO : More Improvements
+
+## Steps to Clone Application
 
 Configuration Settings
 ![Running Program](README_Files/Config.gif)
 
-1. TODO : STEPS
+0. Git clone application.
+1. Running the program in IntelliJ you must configure your JavaFX libraries.
+2. Configure the application (set up your Server and Client).
+3. Add them in compound, so the client can connect to the server.
+4. Run the compound configuration.
 
-### PLACEHOLDER
+### Command Line Option
+OPTIONAL: If not running it in IntelliJ you can run these commands in a terminal
 
+#### Running Server (from root: "Installed_Location"/2020_assignment_2/):
 ```sh
-javac TrainingFile.java
-java tranFile <train/ham> <train/spam>
+java src/sample/Server.java
 ```
+#### Running Client (from root: "Installed_Location"/2020_assignment_2/):
+```sh
+java src/sample/Client.java
+```
+
+###### To Download:
+```sh
+java src/sample/Client.java <UPLOAD> <"FileName_To_Download"> <"Location_To_Download">
+```
+
+###### To Upload:
+```sh
+java src/sample/Client.java <UPLOAD> <"File_Location">
+```
+
+###### Check Contents of Shared Folder:
+```sh
+java src/sample/Client.java <DIR>
+```
+
+## Resources
+[JavaFX Documentation]
 
 ## License
 
@@ -41,6 +76,5 @@ _Ontario Tech University_
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-[Naive Bayes spam filtering]: <https://en.wikipedia.org/wiki/Naive_Bayes_spam_filtering>
-[Bag-of-words model]: <https://en.wikipedia.org/wiki/Bag-of-words_model>
+[JavaFX Documentation]: <https://docs.oracle.com/javase/8/javafx/api/index.html>
 
