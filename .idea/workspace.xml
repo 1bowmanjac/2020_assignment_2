@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c43d9c8-67db-426d-9c97-0c726e7ecef0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Local_Files/localFile2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Local_Files/localFile2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_Files/Config.gif" beforeDir="false" afterPath="$PROJECT_DIR$/README_Files/Config.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_Files/Run.gif" beforeDir="false" afterPath="$PROJECT_DIR$/README_Files/Run.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server_Files/serverFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Server_Files/serverFile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloads/WordCounter2.zipWordCounter2.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloads/assignment1_data.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloads/data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloads/hello.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloads/new.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server_Files/serverFile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Server_Files/serverFile1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filenames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/filenames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2020_assignment_2/sample/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2020_assignment_2/sample/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2020_assignment_2/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2020_assignment_2/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment_2/sample/instance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

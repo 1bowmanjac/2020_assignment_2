@@ -1,13 +1,17 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -21,6 +25,59 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        // Login Scene
+        Stage window = primaryStage;
+        primaryStage.setTitle("File Sharing System");
+
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
+
+        Text scenetitle = new Text("File Share 420.24");
+        scenetitle.setFill(Color.YELLOW);
+        scenetitle.setFont(Font.font("Verdana", FontWeight.BOLD, 20));
+        grid.add(scenetitle, 0, 0, 2, 1);
+
+        // User Input
+        Label name = new Label("User:");
+        grid.add(name, 0, 1);
+        TextField name_field = new TextField();
+        name_field.setPromptText("User");
+        grid.add(name_field, 1, 1);
+
+        // Password Input
+        Label password = new Label("Password:");
+        grid.add(password, 0, 2);
+        PasswordField password_field = new PasswordField();
+        grid.add(password_field, 1, 2);
+        password_field.setPromptText("password");
+
+        Button register = new Button("Register");
+        register.setOnAction(actionEvent -> {
+            Scene fileUI = null;
+            try {
+                fileUI = getFileUI(primaryStage, name_field.getText());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println("User: " + name_field.getText() + "\nPassword:" + password_field.getText());
+            window.setScene(fileUI);
+        });
+
+        grid.add(register, 1, 4);
+
+
+        Scene scene = new Scene(grid, 300, 300);
+
+        //Did use some code from the java oracle css styling website
+        scene.getStylesheets().add("login.css");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+
+    private Scene getFileUI(Stage primaryStage, String name) throws Exception{
         var socket = new Socket("localhost", 25505);
         Client cl = new Client(socket);
 
@@ -45,6 +102,17 @@ public class Main extends Application {
                 ex.printStackTrace();
             }
         });
+
+        // View Server Files
+        Button viewServerBtn = new Button("View");
+        viewServerBtn.setOnAction(e-> {
+            try {
+                viewServerButton();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        serverGrid.add(viewServerBtn, 0, 4);
 
         // Server File List UI
         viewFiles(serverGrid,listView,lines,serverTitle,downloadBtn);
@@ -83,6 +151,17 @@ public class Main extends Application {
             }
         });
 
+        // View Client Files
+        Button viewClientBtn = new Button("View");
+        viewClientBtn.setOnAction(e-> {
+            try {
+                viewClientButton();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        clientGrid.add(viewClientBtn, 0, 4);
+
         // Client File List UI
         viewFiles(clientGrid,clientView,contents,clientTitle,uploadBtn);
 
@@ -94,6 +173,7 @@ public class Main extends Application {
         primaryStage.setTitle("File Sharing System");
 
         primaryStage.show();
+        return scene;
     }
 
     /**
@@ -185,6 +265,38 @@ public class Main extends Application {
 
         // updates UI
         addFile(listView,message);
+    }
+
+    /**
+     * View files content in server shared folder
+     */
+    private void viewServerButton() throws IOException {
+        String message = "";
+        ObservableList<String> selected;
+        selected = listView.getSelectionModel().getSelectedItems();
+        for(String m: selected){
+            message += m;
+        }
+        System.out.println(selected);
+        File file = new File("Server_Files/"+message);
+        HostServices hostServices = getHostServices();
+        hostServices.showDocument(file.getAbsolutePath());
+    }
+
+    /**
+     * View files content in client local shared folder
+     */
+    private void viewClientButton() throws IOException {
+        String message = "";
+        ObservableList<String> selected;
+        selected = clientView.getSelectionModel().getSelectedItems();
+        for(String m: selected){
+            message += m;
+        }
+        System.out.println(selected);
+        File file = new File("Local_Files/"+message);
+        HostServices hostServices = getHostServices();
+        hostServices.showDocument(file.getAbsolutePath());
     }
 
     public static void main(String[] args) { launch(args); }

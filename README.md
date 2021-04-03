@@ -14,18 +14,27 @@
 - Download files from the server
 
 A file sharing system that can be used to upload files into a shared folder
-server that are connected to clients. The server is multi-threaded and 
+server that are connected to clients. The server is multi-threaded and
 corresponds to a socket that remains open until it is handled. The client
 has its own respective UI that where most of the file sharing takes place.
-The server has a UI of a list of files in the shared folder of the server 
+The server has a UI of a list of files in the shared folder of the server
 while the bottom has a list of files in the shared folder of the local client.
 
 ## Improvements
 A custom 'dark mode' CSS material design was implemented into the interface.
 
-  Interface was slightly modified as for a unique appearance. 
-  
-  No limit to file size.
+Interface was slightly modified as for a unique appearance. (Split from middle)
+
+No limit to file size.
+
+####Login Screen Added
+
+![Login Screen](README_Files/Login.png)
+
+####Display File Content (mainly txt, csv, json files)
+
+![Login Screen](README_Files/DisplayFileContent.gif)
+
 
 ## Steps to Clone Application
 
@@ -68,6 +77,8 @@ java src/sample/Client.java <DIR>
 ## Resources
 [JavaFX Documentation]
 
+[CSS Styling Documentation]
+
 ## License
 
 _Jack Bowman 100752381_  
@@ -78,4 +89,5 @@ _Ontario Tech University_
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 [JavaFX Documentation]: <https://docs.oracle.com/javase/8/javafx/api/index.html>
+[CSS Styling Documentation]: <https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html>
 

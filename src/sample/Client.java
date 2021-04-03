@@ -31,7 +31,7 @@ public class Client {
 
         //command: java Client.java UPLOAD ~jack/Downloads/WordCounter2.zip
         } if(args[0].equals("UPLOAD")){
-            File file = new File(args[1]);
+            File file = new File("Local_Files/"+args[1]);
             client.UPLOAD(file);
 
         //command: java Client.java DOWNLOAD WordCounter2.zip ~jack/Downloads/

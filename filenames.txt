@@ -1,1 +1,2 @@
-serverFile.xml
+serverFile1.xml
+serverFile2.json
