@@ -69,7 +69,7 @@ java src/sample/Client.java <DOWNLOAD> <"FileName_To_Download"> <"Location_To_Do
 java src/sample/Client.java <UPLOAD> <"File_Location">
 ```
 
-###### Check Contents of Shared Folder:
+###### Check Contents of Server Shared Folder:
 ```sh
 java src/sample/Client.java <DIR>
 ```
