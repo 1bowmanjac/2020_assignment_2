@@ -27,11 +27,11 @@ Interface was slightly modified as for a unique appearance. (Split from middle)
 
 No limit to file size.
 
-####Login Screen Added
+#### Login Screen Added
 
 ![Login Screen](README_Files/Login.png)
 
-####Display File Content (mainly txt, csv, json files)
+#### Display File Content (mainly txt, csv, json files)
 
 ![Login Screen](README_Files/DisplayFileContent.gif)
 
