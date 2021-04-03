@@ -24,6 +24,8 @@ while the bottom has a list of files in the shared folder of the local client.
 A custom 'dark mode' CSS material design was implemented into the interface.
 
   Interface was slightly modified as for a unique appearance. 
+  
+  No limit to file size.
 
 ## Steps to Clone Application
 
